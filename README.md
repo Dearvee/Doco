@@ -13,4 +13,4 @@
 
 # Instruction
 
-* Window-amd64-installer(https://github.com/Dearvee/Doco/raw/master/installer/doco-installer.exe)
+* [Window-amd64-installer](https://github.com/Dearvee/Doco/raw/master/installer/doco-installer.exe)
