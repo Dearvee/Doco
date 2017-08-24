@@ -93,8 +93,7 @@ class Get():
             ui = ui()
             ui.setupUi(Form)
 
-            
-            animation = QPropertyAnimation(Form, "geometry")
+            animation = QPropertyAnimation(Form, b"geometry")
             animation.setDuration(256)
             animation.setStartValue(QRect(250, 250, 420, 0))
             animation.setEndValue(QRect(250, 200, 420, 714))
@@ -517,23 +516,24 @@ class Ui_Doco(object):
             border-image:url(image/left_hover.png) no-repeat;
             }
             ''')
-            self.animation = QPropertyAnimation(Doco,'geometry')#form animation
+            self.animation = QPropertyAnimation(Doco,b'geometry')#form animation
             self.animation.setDuration(200)
             self.animation.setStartValue(QRect(250, 200, 420,714))
             self.animation.setEndValue(QRect(250, 200, 1200,714))
             self.animation.start()
 
-            self.animation1 = QPropertyAnimation(self.toolButton_close,'geometry')
+            self.animation1 = QPropertyAnimation(self.toolButton_close,b'geometry')
             self.animation1.setDuration(500)
             self.animation1.setStartValue(QRect(390, 0, 32, 24))#close animation
             self.animation1.setEndValue(QRect(1170, 0, 32, 24))
             self.animation1.start()
 
-            self.animation2 = QPropertyAnimation(self.toolButton_min,'geometry')
+            self.animation2 = QPropertyAnimation(self.toolButton_min,b'geometry')
             self.animation2.setDuration(800)
             self.animation2.setStartValue(QRect(360, 0, 32, 24))#min animation
             self.animation2.setEndValue(QRect(1140, 0, 32, 24))
             self.animation2.start()
+
 
         else:
             self.pushButton_search.setStyleSheet('''
@@ -545,19 +545,19 @@ class Ui_Doco(object):
             border-image:url(image/right_hover.png) no-repeat;
             }
             ''')
-            self.animation = QPropertyAnimation(Doco,'geometry')
+            self.animation = QPropertyAnimation(Doco,b'geometry')
             self.animation.setDuration(200)
             self.animation.setStartValue(QRect(250, 200, 1200,714))
             self.animation.setEndValue(QRect(250, 200, 420,714))
             self.animation.start()
 
-            self.animation1 = QPropertyAnimation(self.toolButton_close,'geometry')
+            self.animation1 = QPropertyAnimation(self.toolButton_close,b'geometry')
             self.animation1.setDuration(800)
             self.animation1.setStartValue(QRect(450, 0, 32, 24))#close animation
             self.animation1.setEndValue(QRect(390, 0, 32, 24))
             self.animation1.start()
 
-            self.animation2 = QPropertyAnimation(self.toolButton_min,'geometry')
+            self.animation2 = QPropertyAnimation(self.toolButton_min,b'geometry')
             self.animation2.setDuration(500)
             self.animation2.setStartValue(QRect(420, 0, 32, 24))#min animation
             self.animation2.setEndValue(QRect(360, 0, 32, 24))
@@ -949,11 +949,13 @@ class Event():
            if Event.x == 0:
                Event.x = 1
                self.lineEdit_in.clear()
-               self.animation = QPropertyAnimation(self.lineEdit_in,'geometry')
+
+               self.animation = QPropertyAnimation(self.lineEdit_in,b'geometry')
                self.animation.setDuration(200)
                self.animation.setStartValue(QRect(720, 20, 251, 41))#620, 20, 351, 41
                self.animation.setEndValue(QRect(620, 20, 351, 41))
                self.animation.start()
+
            self.lineEdit_in.setStyleSheet('''
             border-radius:20px;
             background:#fff;
@@ -968,11 +970,13 @@ class Event():
             if Event.x == 1:
                 Event.x = 0
                 self.lineEdit_in.clear()
-                self.animation = QPropertyAnimation(self.lineEdit_in,'geometry')
+
+                self.animation = QPropertyAnimation(self.lineEdit_in,b'geometry')
                 self.animation.setDuration(200)
                 self.animation.setStartValue(QRect(620, 20, 351, 41))#620, 20, 351, 41
                 self.animation.setEndValue(QRect(720, 20, 251, 41))
                 self.animation.start()
+
             self.lineEdit_in.setText('歌名/歌手/专辑')
             self.lineEdit_in.setStyleSheet('''
             border-radius:20px;
@@ -1187,12 +1191,13 @@ class Event():
             if (Event.t<len(times[pos])):
                 if(pygame.mixer.music.get_pos() >= Event.ms_time(times[pos][Event.t])):
                    Event.t = Event.t + 1
-               
-                   self.animation_word = QPropertyAnimation(self.listWidget_word.verticalScrollBar(),'value')
+
+                   self.animation_word = QPropertyAnimation(self.listWidget_word.verticalScrollBar(),b'value')
                    self.animation_word.setDuration(1000)
                    self.animation_word.setStartValue(Event.y)#min animation
                    self.animation_word.setEndValue(Event.y+50)
                    self.animation_word.start()
+
                    Event.y = Event.y + 50
                    self.listWidget_word.setCurrentRow(Event.t+6)
         
