@@ -12,4 +12,6 @@ based on pygame music player
 
 # Instruction
 
-* [Window-amd64-installer](https://github.com/Dearvee/Doco/raw/master/installer/doco-installer.exe)
+* [doco-1.0.0-win64-installer.exe](https://github.com/Dearvee/Doco/raw/master/installer/doco-installer.exe)
+
+* [doco-1.0.0-linux64.zip](https://github.com/Dearvee/Doco/archive/master.zip)
